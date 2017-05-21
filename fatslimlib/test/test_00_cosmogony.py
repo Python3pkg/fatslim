@@ -17,7 +17,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function
+
 
 # Global imports
 from unittest import TestCase

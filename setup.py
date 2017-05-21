@@ -21,7 +21,7 @@
 """
 FATSLiM setup script
 """
-from __future__ import print_function
+
 from os import chdir, environ
 from os.path import realpath, dirname
 import sys
@@ -30,7 +30,7 @@ from setuptools import setup, find_packages
 from setuptools import Extension
 from setuptools.command.test import test as TestCommand
 try:
-    from StringIO import StringIO  # python 2, not cStringIO due to unicode strings
+    from io import StringIO  # python 2, not cStringIO due to unicode strings
 except ImportError:
     from io import StringIO  # python 3
 from contextlib import contextmanager

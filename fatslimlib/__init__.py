@@ -17,7 +17,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function
+
 import sys
 
 __authors__ = "Sebastien Buchoux <sebastien.buchoux@gmail.com>"
@@ -72,9 +72,9 @@ __version__ = _format_version_tuple(version_tuple)
 
 
 def print_greetings():
-    print(u"%s - %s" % (__shortname__, __description__))
-    print(u"version %s" % __version__)
-    print(u"%s\n" % __copyright__)
+    print("%s - %s" % (__shortname__, __description__))
+    print("version %s" % __version__)
+    print("%s\n" % __copyright__)
 
 
 def print_goodbye(exit_code):

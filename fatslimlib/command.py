@@ -19,7 +19,7 @@
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
 
 # Global imports
-from __future__ import print_function
+
 import argparse
 import csv
 import numpy as np
@@ -936,15 +936,15 @@ class MembraneAnalysisCommand(AnalyticalCommand):
         return output
 
     def process_results(self):
-        output = u"Average values over %i processed frames:\n" % (self.processing_index + 1)
+        output = "Average values over %i processed frames:\n" % (self.processing_index + 1)
 
         for prop in self.properties:
             m_mean, m_std, l1_mean, l1_std, l2_mean, l2_std = \
                 prop.get_results(self.processing_index+1)
 
-            output += u"%s: Membrane=%.3f\u00b1%.3f%s - " \
-                      u"%s=%.3f\u00b1%.3f%s - " \
-                      u"%s=%.3f\u00b1%.3f%s\n" % (prop.fullname.capitalize(),
+            output += "%s: Membrane=%.3f\u00b1%.3f%s - " \
+                      "%s=%.3f\u00b1%.3f%s - " \
+                      "%s=%.3f\u00b1%.3f%s\n" % (prop.fullname.capitalize(),
                                                 m_mean, m_std, prop.units,
                                                 self.leaflet1_type.capitalize(),
                                                 l1_mean, l1_std, prop.units,
@@ -954,6 +954,6 @@ class MembraneAnalysisCommand(AnalyticalCommand):
 
             xvg_file = getattr(self.namespace, "plot_%s" % prop.shortname)
             if xvg_file is not None:
-                output += u"%s\n" % prop.save_values_to_xvg(xvg_file)
+                output += "%s\n" % prop.save_values_to_xvg(xvg_file)
 
         return output

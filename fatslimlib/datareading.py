@@ -17,7 +17,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function
+
 
 # Global imports
 import os
@@ -39,7 +39,7 @@ def get_readers(top_file, index_file, coords_file=None, verbose=True):
         top_reader = _Topology_readers[top_ext]
     except KeyError:
         raise UnknownFileType("'%s' is not a topology file. Known types: %s" % (top_file,
-                                                                                ", ".join(_Topology_readers.keys())))
+                                                                                ", ".join(list(_Topology_readers.keys()))))
 
     # Handle index file
     index_ext = os.path.splitext(index_file)[1].lower()
@@ -47,7 +47,7 @@ def get_readers(top_file, index_file, coords_file=None, verbose=True):
         index_loader = _Index_loaders[index_ext]
     except KeyError:
         raise UnknownFileType("'%s' is not an index file. Known types: %s" % (index_file,
-                                                                              ", ".join(_Index_loaders.keys())))
+                                                                              ", ".join(list(_Index_loaders.keys()))))
 
     # Handle and load coordinates file
     if coords_file is None:
@@ -59,7 +59,7 @@ def get_readers(top_file, index_file, coords_file=None, verbose=True):
         coords_reader = _Coordinates_readers[coords_ext]
     except KeyError:
         raise UnknownFileType("'%s' is not a coordinates file. Known types: %s" % (coords_file,
-                                                                                   ", ".join(_Coordinates_readers.keys())))
+                                                                                   ", ".join(list(_Coordinates_readers.keys()))))
 
     return \
         top_reader(top_file, verbose=verbose), \

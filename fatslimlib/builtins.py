@@ -17,7 +17,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function, absolute_import, division
+
 import os
 import sys
 import numpy as np
@@ -368,7 +368,7 @@ class PropertyAPL(MembraneProperty):
             l1_val = [0.0, 0]
             l2_val = [0.0, 0]
 
-            for key, val in l1_val_dict.items():
+            for key, val in list(l1_val_dict.items()):
                 mem_val[0] += val[0] * val[1]
                 mem_val[1] += val[0]
 
@@ -383,7 +383,7 @@ class PropertyAPL(MembraneProperty):
 
                 mem_val_by_type[key] = [val[1] * val[0], val[0]]
 
-            for key, val in l2_val_dict.items():
+            for key, val in list(l2_val_dict.items()):
                 mem_val[0] += val[0] * val[1]
                 mem_val[1] += val[0]
 
@@ -402,7 +402,7 @@ class PropertyAPL(MembraneProperty):
                 except KeyError:  # pragma: no cover
                     mem_val_by_type[key] = [val[1] * val[0], val[0]]
 
-            for key, val in mem_val_by_type.items():
+            for key, val in list(mem_val_by_type.items()):
                 val = float(val[0]) / val[1]
 
                 try:

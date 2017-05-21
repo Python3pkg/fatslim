@@ -17,10 +17,10 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function
+
 
 try:
-    from StringIO import StringIO  # python 2, not cStringIO due to unicode strings
+    from io import StringIO  # python 2, not cStringIO due to unicode strings
 except ImportError:
     from io import StringIO  # python 3
 from contextlib import contextmanager
@@ -76,9 +76,9 @@ def test_version_formatting():
 
 
 def test_greetings():
-    header = u"FATSLiM - %s" % __description__
-    fsl_version = u"version %s" % __version__
-    copyright = u"%s" % __copyright__
+    header = "FATSLiM - %s" % __description__
+    fsl_version = "version %s" % __version__
+    copyright = "%s" % __copyright__
 
     lines = [header, fsl_version, copyright, '']
 

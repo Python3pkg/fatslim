@@ -17,7 +17,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function
+
 
 # Global imports
 import numpy as np
@@ -206,7 +206,7 @@ def test_apl_bilayer_chol_by_type(frame_bilayer_chol):
 
     apl = membrane.get_apl()
     for lid in [1, 2]:
-        for key, val in apl[lid].items():
+        for key, val in list(apl[lid].items()):
             print("Leaflet #%i - %i %s: APL=%.3f (min:%.3f, max:%.3f) - Area=%.3f" %
                   (lid, val[0], key,
                    val[1], val[2], val[3], val[4]))

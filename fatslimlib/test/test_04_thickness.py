@@ -36,10 +36,10 @@ def test_thickness_model_bilayer(frame_model_bilayer):
 
     thickness = membrane.get_thickness(only_average=False)
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1].mean(), thickness[1].min(), thickness[1].max(),
-        thickness[2].mean(), thickness[2].min(), thickness[2].max(),))
+        thickness[2].mean(), thickness[2].min(), thickness[2].max(),)))
 
     assert_allclose(thickness[0], 5.664, rtol=RTOL)
     assert_allclose(thickness[1], np.array([5.664] * 36), rtol=RTOL)
@@ -52,10 +52,10 @@ def test_thickness_bilayer(frame_bilayer):
 
     thickness = membrane.get_thickness()
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1][0], thickness[1][1], thickness[1][2],
-        thickness[2][0], thickness[2][1], thickness[2][2]))
+        thickness[2][0], thickness[2][1], thickness[2][2])))
 
     assert_allclose(thickness[0], 3.94, rtol=RTOL)
     assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)
@@ -67,10 +67,10 @@ def test_thickness_bilayer_chol(frame_bilayer_chol):
 
     thickness = membrane.get_thickness()
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1][0], thickness[1][1], thickness[1][2],
-        thickness[2][0], thickness[2][1], thickness[2][2]))
+        thickness[2][0], thickness[2][1], thickness[2][2])))
 
     assert_allclose(thickness[0], 4.089, rtol=RTOL)
     assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)
@@ -82,10 +82,10 @@ def test_thickness_model_bilayer_prot(frame_model_bilayer_prot):
 
     thickness = membrane.get_thickness(only_average=False)
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1].mean(), thickness[1].min(), thickness[1].max(),
-        thickness[2].mean(), thickness[2].min(), thickness[2].max(),))
+        thickness[2].mean(), thickness[2].min(), thickness[2].max(),)))
 
     assert_allclose(thickness[0], 5.664, rtol=RTOL)
     assert_allclose(thickness[1], np.array([5.664] * 240), rtol=RTOL)
@@ -98,10 +98,10 @@ def test_thickness_bilayer_prot(frame_bilayer_prot):
 
     thickness = membrane.get_thickness()
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1][0], thickness[1][1], thickness[1][2],
-        thickness[2][0], thickness[2][1], thickness[2][2]))
+        thickness[2][0], thickness[2][1], thickness[2][2])))
 
     assert_allclose(thickness[0], 3.151, rtol=RTOL)
     assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)
@@ -113,10 +113,10 @@ def test_thickness_bilayer_peptide(frame_bilayer_peptide):
 
     thickness = membrane.get_thickness()
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1][0], thickness[1][1], thickness[1][2],
-        thickness[2][0], thickness[2][1], thickness[2][2]))
+        thickness[2][0], thickness[2][1], thickness[2][2])))
 
     assert_allclose(thickness[0], 3.768, rtol=RTOL)
     assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)
@@ -128,10 +128,10 @@ def test_thickness_vesicle_model(frame_model_vesicle):
 
     thickness = membrane.get_thickness()
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1][0], thickness[1][1], thickness[1][2],
-        thickness[2][0], thickness[2][1], thickness[2][2]))
+        thickness[2][0], thickness[2][1], thickness[2][2])))
 
     assert_allclose(thickness[0], 4.998, rtol=RTOL)
     assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)
@@ -143,10 +143,10 @@ def test_thickness_vesicle(frame_vesicle):
 
     thickness = membrane.get_thickness()
 
-    print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
+    print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)" % (
         thickness[0],
         thickness[1][0], thickness[1][1], thickness[1][2],
-        thickness[2][0], thickness[2][1], thickness[2][2]))
+        thickness[2][0], thickness[2][1], thickness[2][2])))
 
     assert_allclose(thickness[0], 3.980, rtol=RTOL)
     assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)
@@ -159,11 +159,11 @@ def test_thickness_vesicle_traj(traj_vesicle):
 
         thickness = membrane.get_thickness()
 
-        print("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)"
+        print(("Thickness: AVG:%.3f - L1:%.3f (min:%.3f, max:%.3f), L2:%.3f (min:%.3f, max:%.3f)"
               % (
                   thickness[0],
                   thickness[1][0], thickness[1][1], thickness[1][2],
-                  thickness[2][0], thickness[2][1], thickness[2][2]))
+                  thickness[2][0], thickness[2][1], thickness[2][2])))
 
         assert_allclose(thickness[0], avg_thicknesses[i], rtol=RTOL)
         assert_allclose(thickness[1][0], thickness[2][0], rtol=RTOL)

@@ -17,7 +17,7 @@
 #
 #    You should have received a copy of the GNU General Public License
 #    along with FATSLiM.  If not, see <http://www.gnu.org/licenses/>.
-from __future__ import print_function
+
 
 # Global imports
 import numpy as np
@@ -406,7 +406,7 @@ def test_aggregate_residue(frame_model_bilayer):
     aggregates = frame.get_aggregates()
     ref_residue = frame.trajectory.get_topology().get_residue_from_atomid(ref_atomid)
 
-    for key, val in aggregates[1].get_residue(0).items():
+    for key, val in list(aggregates[1].get_residue(0).items()):
         try:
             assert ref_residue[key] == val
         except ValueError:
